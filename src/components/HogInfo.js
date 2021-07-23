@@ -8,10 +8,6 @@ function HogInfo({ hog }){
         console.log(hog)
         setIsClicked(!isClicked)
     }
-        // const handleClick = () => {
-        //     console.log(hog)
-        //     setIsClicked(!isClicked)
-        // }
     return (
         <div onClick={handleClick}>
             <h3>{hog.name}</h3>

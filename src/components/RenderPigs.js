@@ -1,5 +1,7 @@
 import HogInfo from "./HogInfo"
 import { useState } from "react"
+import Filter from "./Filter"
+import Sort from "./Sort"
 
 function RenderPigs({ hog }) {
     const [isFiltered, setIsFiltered] = useState("all")
@@ -31,16 +33,8 @@ function RenderPigs({ hog }) {
 
     return (
         <div>
-            <select name="filter" onChange={handleFilter}>
-                <option value="all">Greased or Not</option>
-                <option value="true">Greased</option>
-                <option value="false">Not Greased</option>
-            </select>
-            <select name="sort" onChange={handleSort}>
-                <option value="none">Sort By</option>
-                <option value="name">Name</option>
-                <option value="weight">Weight</option>
-            </select>
+            <Filter filterFunction={handleFilter}/>
+            <Sort sortFunction={handleSort} />
             {pigsToDisplay.map(currentHog => {
             return(
                 <HogInfo hog={currentHog}/>

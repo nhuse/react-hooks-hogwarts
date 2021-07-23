@@ -10,7 +10,6 @@ function App() {
 		<div className="App">
 			<Nav />
 			<RenderPigs hog={hogs}/>
-			{/* <HogInfo hog={hogs} /> */}
 		</div>
 	)	
 }
